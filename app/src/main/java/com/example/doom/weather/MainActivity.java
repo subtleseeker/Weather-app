@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
         String provider = locationManager.getBestProvider(new Criteria(), false);
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -66,22 +65,13 @@ public class MainActivity extends AppCompatActivity {
         }
         Location location = locationManager.getLastKnownLocation(provider);
 
-
         Double lat = location.getLatitude();
-
         Double lon = location.getLongitude();
-
 
         DownloadTask task = new DownloadTask();
 
         task.execute("http://api.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=00373b3292adc39d83226c2230d2aa7c");
         //task.execute("http://samples.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=00373b3292adc39d83226c2230d2aa7c");
-
-
-
-
-
-
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

@@ -32,9 +32,7 @@ public class DownloadTask extends AsyncTask<String,Void,String> {
             url = new URL(urls[0]);
 
             urlConnection = (HttpURLConnection) url.openConnection();
-
             InputStream in = urlConnection.getInputStream();
-
             InputStreamReader reader = new InputStreamReader(in);
 
             int data= reader.read();
@@ -42,16 +40,15 @@ public class DownloadTask extends AsyncTask<String,Void,String> {
             while (data != -1 ){
 
                 char current =(char) data;
-
                 result+= current;
-
                 data = reader.read();
 
             }
 
             return result;
 
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -84,7 +81,9 @@ public class DownloadTask extends AsyncTask<String,Void,String> {
 
 
 
-        } catch (JSONException e) {
+        }
+
+        catch (JSONException e) {
             e.printStackTrace();
         }
 

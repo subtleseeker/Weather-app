@@ -17,11 +17,11 @@
         android:id="@+id/relLayout"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="8dp"
-        >
+        android:background="@drawable/background2"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="-5dp">
 
-        <LinearLayout
+        <!--<LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -29,70 +29,88 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true">
+            android:layout_alignParentEnd="true">-->
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:layout_weight="0.37" />
+        <TextView
+            android:id="@+id/weatherText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.37"
+            android:gravity="center_vertical"
+            android:text="Weather++"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="50dp" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:text="TextView" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="TextView" />
 
-            <TextView
-                android:id="@+id/placeText"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_marginEnd="16dp"
-                android:layout_weight="0.01"
-                android:text="@string/placeText"
-                android:textColor="#FFFFFF"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="70dp"
-                tools:layout_editor_absoluteY="16dp" />
+        <TextView
+            android:id="@+id/placeText"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/weatherText"
+            android:layout_marginTop="37dp"
+            android:layout_weight="0.01"
+            android:text="@string/placeText"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="70dp"
+            tools:layout_editor_absoluteY="16dp" />
 
-            <TextView
-                android:id="@+id/placeData"
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:layout_weight="0.10"
-                android:text=""
-                android:textAlignment="viewStart"
-                android:textColor="#FFFFFF"
-                android:textSize="25dp"
-                tools:layout_editor_absoluteX="271dp"
-                tools:layout_editor_absoluteY="234dp" />
+        <TextView
+            android:id="@+id/placeData"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_weight="0.10"
+            android:text=""
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            tools:layout_editor_absoluteX="271dp"
+            tools:layout_editor_absoluteY="234dp"
+            android:layout_alignBaseline="@+id/placeText"
+            android:layout_alignBottom="@+id/placeText"
+            android:layout_toRightOf="@+id/placeText"
+            android:layout_toEndOf="@+id/placeText" />
 
-            <TextView
-                    android:id="@+id/tempText"
-                    android:layout_width="match_parent"
-                    android:layout_height="42dp"
-                    android:text="@string/temperatureText"
-                    android:textAlignment="viewStart"
-                    android:textColor="#FFFFFF"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    tools:layout_editor_absoluteX="37dp"
-                    tools:layout_editor_absoluteY="234dp" />
+        <TextView
+            android:id="@+id/tempText"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/temperatureText"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="234dp"
+            android:layout_below="@+id/placeText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-            <TextView
-                android:id="@+id/tempData"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_centerHorizontal="true"
-                android:text=""
-                android:textAlignment="viewStart"
-                android:textColor="#FFFFFF"
-                android:textSize="25dp"
-                tools:layout_editor_absoluteX="143dp"
-                tools:layout_editor_absoluteY="111dp" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tempData"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_alignBaseline="@+id/tempText"
+            android:layout_alignBottom="@+id/tempText"
+            android:layout_toEndOf="@+id/tempText"
+            android:layout_toRightOf="@+id/tempText"
+            android:text=""
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            tools:layout_editor_absoluteX="143dp"
+            tools:layout_editor_absoluteY="111dp" />
+        <!--</LinearLayout>-->
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
