@@ -30,31 +30,22 @@ public class DownloadTask extends AsyncTask<String,Void,String> {
 
         try {
             url = new URL(urls[0]);
-
             urlConnection = (HttpURLConnection) url.openConnection();
             InputStream in = urlConnection.getInputStream();
             InputStreamReader reader = new InputStreamReader(in);
-
             int data= reader.read();
 
             while (data != -1 ){
-
                 char current =(char) data;
                 result+= current;
                 data = reader.read();
-
             }
-
             return result;
-
         }
+
         catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
-
         return null;
     }
 
@@ -64,29 +55,25 @@ public class DownloadTask extends AsyncTask<String,Void,String> {
 
         try {
             JSONObject jsonObject = new JSONObject(result);
-
             JSONObject weatherData = new JSONObject(jsonObject.getString("main"));
-
             double temperature = Double.parseDouble(weatherData.getString("temp"));
-
+            double tempMin = Double.parseDouble(weatherData.getString("temp_min"));
+            double tempMax = Double.parseDouble(weatherData.getString("temp"));
             temperature = (int)(temperature - 273.15);
-
+            tempMin = (int)(tempMin - 273.15);
+            tempMax = (int)(tempMax - 273.15);
             String placeName = jsonObject.getString("name");
 
-
             MainActivity.temperatureTextView.setText(String.valueOf(temperature));
-
             MainActivity.placeTextView.setText(placeName);
-
-
-
-
+            MainActivity.tempMaxTextView.setText(String.valueOf(tempMax));
+            MainActivity.tempMinTextView.setText(String.valueOf(tempMin));
         }
 
-        catch (JSONException e) {
+        catch (Exception e) {
             e.printStackTrace();
         }
 
-
     }
 }
+

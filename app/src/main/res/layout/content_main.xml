@@ -16,7 +16,7 @@
     <RelativeLayout
         android:id="@+id/relLayout"
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/background2"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="-5dp">
@@ -42,11 +42,11 @@
             android:textColor="#FFFFFF"
             android:textSize="50dp" />
 
-        <TextView
+        <!--<TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="TextView" />
+            android:text="TextView" />-->
 
         <TextView
             android:id="@+id/placeText"
@@ -68,22 +68,22 @@
             android:id="@+id/placeData"
             android:layout_width="wrap_content"
             android:layout_height="53dp"
-            android:layout_weight="0.10"
             android:text=""
-            android:textAlignment="viewStart"
             android:textColor="#FFFFFF"
             android:textSize="25dp"
             tools:layout_editor_absoluteX="271dp"
             tools:layout_editor_absoluteY="234dp"
-            android:layout_alignBaseline="@+id/placeText"
-            android:layout_alignBottom="@+id/placeText"
-            android:layout_toRightOf="@+id/placeText"
-            android:layout_toEndOf="@+id/placeText" />
+            android:layout_above="@+id/tempText"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:id="@+id/tempText"
             android:layout_width="wrap_content"
             android:layout_height="42dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/placeText"
             android:layout_marginTop="25dp"
             android:text="@string/temperatureText"
             android:textAlignment="viewStart"
@@ -91,25 +91,81 @@
             android:textSize="25dp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="234dp"
-            android:layout_below="@+id/placeText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            tools:layout_editor_absoluteY="234dp" />
 
         <TextView
             android:id="@+id/tempData"
             android:layout_width="wrap_content"
             android:layout_height="42dp"
-            android:layout_alignBaseline="@+id/tempText"
-            android:layout_alignBottom="@+id/tempText"
-            android:layout_toEndOf="@+id/tempText"
-            android:layout_toRightOf="@+id/tempText"
             android:text=""
-            android:textAlignment="viewStart"
             android:textColor="#FFFFFF"
             android:textSize="25dp"
             tools:layout_editor_absoluteX="143dp"
-            tools:layout_editor_absoluteY="111dp" />
+            tools:layout_editor_absoluteY="111dp"
+
+            android:layout_alignBaseline="@+id/tempText"
+            android:layout_alignBottom="@+id/tempText"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/tempMinText"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:text="Min.Temp. :"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:layout_below="@+id/tempText"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:id="@+id/tempMinData"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="36dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:textAlignment="textEnd"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:text=""
+            android:layout_alignTop="@+id/tempMinText"
+            android:layout_toRightOf="@+id/tempText"
+            android:layout_toEndOf="@+id/tempText" />
+
+        <TextView
+            android:id="@+id/tempMaxText"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:text="Max.Temp. :"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/tempMinText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:id="@+id/tempMaxData"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:textAlignment="textEnd"
+            android:text=""
+            android:layout_alignTop="@+id/tempMaxText"
+            android:layout_toRightOf="@+id/tempMaxText"
+            android:layout_toEndOf="@+id/tempMaxText" />
+
         <!--</LinearLayout>-->
 
     </RelativeLayout>

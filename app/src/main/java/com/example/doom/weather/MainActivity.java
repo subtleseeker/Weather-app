@@ -2,6 +2,7 @@ package com.example.doom.weather;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -24,30 +25,18 @@ public class MainActivity extends AppCompatActivity {
 
     static TextView placeTextView;
     static TextView temperatureTextView;
-
+    static TextView tempMaxTextView;
+    static TextView tempMinTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
-        RelativeLayout relativeLayout = new RelativeLayout(this);
-        TextView placeBox = new TextView(this);
-
-        setContentView(relativeLayout);
-        placeBox.setText("Place:");
-        //Drawable place = place.setBackgroundResource(R.color.lightBlue);
-
-        relativeLayout.addView(placeBox);
-
-        setContentView(relativeLayout);
-        */
-
-
         placeTextView = (TextView) findViewById(R.id.placeData);
-
         temperatureTextView = (TextView) findViewById(R.id.tempData);
+        tempMaxTextView = (TextView) findViewById(R.id.tempMaxData);
+        tempMinTextView = (TextView) findViewById(R.id.tempMinData);
 
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -71,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
         DownloadTask task = new DownloadTask();
 
         task.execute("http://api.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=00373b3292adc39d83226c2230d2aa7c");
-        //task.execute("http://samples.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=00373b3292adc39d83226c2230d2aa7c");
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -106,3 +93,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
+
