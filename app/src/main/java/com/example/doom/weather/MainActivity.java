@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
         DownloadTask task = new DownloadTask();
 
-        //task.execute("api.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=00373b3292adc39d83226c2230d2aa7c");
-        task.execute("http://samples.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=00373b3292adc39d83226c2230d2aa7c");
+        task.execute("http://api.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=00373b3292adc39d83226c2230d2aa7c");
+        //task.execute("http://samples.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=00373b3292adc39d83226c2230d2aa7c");
 
 
 
